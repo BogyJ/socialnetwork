@@ -9,7 +9,7 @@ class UserLoginModel {
     }
 
     public function addLogin($userId, $ip) {
-        $sql = 'INSERT INTO `survey`.`user_login` (`user_id`, `ip_address`) VALUES (?, ?)';
+        $sql = 'INSERT INTO `social_network`.`user_login` (`user_id`, `ip_address`) VALUES (?, ?)';
         $prep = $this->dbc->getConnection()->prepare($sql);
         $result = false;
         $result = $prep->execute([ $userId, $ip ]);

@@ -4,7 +4,7 @@
     class MainController extends \App\Core\Controller {
         public function home() {
             if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) {
-                header('Location: /user/profile/');
+                header('Location: ' . \Configuration::BASE . '/user/profile/');
             }
         }
 
@@ -21,7 +21,7 @@
             $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
             if ($password1 !== $password2) {
-                $this->set('message', 'Došlo je do greške: lozinke se ne poklapaju.');
+                $this->set('message', 'Error: password does not match.');
                 return;
             }
 
@@ -42,13 +42,13 @@
             }
 
             if ($userId) {
-                $this->set('message', 'Nalog napravljen. Ulogujte sa svojim novim korisničkim imenom.');
+                $this->set('message', 'Account successfully created. Please, log in!');
             }
         }
 
         public function getLogin() {
             if ($_SESSION["loggedIn"]) {
-                header('Location: /');
+                header('Location: ' . \Configuration::BASE);
             }
 
             if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
@@ -68,13 +68,13 @@
             $user = $userModel->getByUsername($username);
 
             if (!$user) {
-                $this->set('message', 'Došlo je do greške: nalog sa tim korisničkim imenom ne postoji.');
+                $this->set('message', 'Error: account with that username does not exist.');
                 return;
             }
 
             if (!password_verify($password, $user->password_hash)) {
-                sleep(1); // secure from brute force attack
-                $this->set('message', 'Došlo je do greške: lozinka nije ispravna.');
+                sleep(1); // prevent brute force attack, needs improvement
+                $this->set('message', 'Error: check credentials again.');
                 return;
             }
 
@@ -86,12 +86,12 @@
 
             $_SESSION["loggedIn"] = true;
             $_SESSION["userId"] = $user->user_id;
-            header('Location: /user/profile/');
+            header('Location: ' . \Configuration::BASE . '/user/profile/');
         }
 
         public function getLogout() {
             session_destroy();
-            header('Location: /');
+            header('Location: ' . \Configuration::BASE);
         }
 
     }

@@ -9,7 +9,7 @@
         }
 
         public function getAllUsers(): array {
-            $sql = 'SELECT * FROM `survey`.`user`;';
+            $sql = 'SELECT * FROM `social_network`.`user`;';
             $prep = $this->dbc->getConnection()->prepare($sql);
             $result = $prep->execute();
             $users = [];
@@ -22,7 +22,7 @@
         }
 
         public function getUserById(int $userId) {
-            $sql = 'SELECT * FROM `survey`.`user` WHERE `user`.`user_id` = ?;';
+            $sql = 'SELECT * FROM `social_network`.`user` WHERE `user`.`user_id` = ?;';
             $prep = $this->dbc->getConnection()->prepare($sql);
             $result = $prep->execute([ $userId ]);
             $user = NULL;
@@ -35,7 +35,7 @@
         }
 
         public function getByUsername(string $username) {
-            $sql = 'SELECT * FROM `survey`.`user` WHERE `user`.`username` = ?;';
+            $sql = 'SELECT * FROM `social_network`.`user` WHERE `user`.`username` = ?;';
             $prep = $this->dbc->getConnection()->prepare($sql);
             $result = $prep->execute([ $username ]);
             $user = NULL;
@@ -48,7 +48,7 @@
         }
 
         public function addUser(array $fieldsValues) {
-            $sql = "INSERT INTO `survey`.`user`(forename, surname, username, password_hash, email) VALUES(?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO `social_network`.`user`(forename, surname, username, password_hash, email) VALUES(?, ?, ?, ?, ?)";
             $prep = $this->dbc->getConnection()->prepare($sql);
             $result = false;
             try {

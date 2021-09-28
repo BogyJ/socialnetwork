@@ -1,0 +1,37 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container">
+    <form action="{{ BASE }}/user/register/" method="POST">
+        <div class="form-group">
+            <label for="forename">Forename</label>
+            <input type="text" class="form-control" id="forename" name="forename" required>
+        </div>
+        <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" class="form-control" id="surname" name="surname" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password1" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword2">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" name="password2" required>
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Register</button>
+    </form>
+    {% if message %}
+    <h1 class="display-5 text-center mt-2">{{ message }}</h1>
+    {% endif %}
+</div>
+{% endblock %}

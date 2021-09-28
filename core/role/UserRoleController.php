@@ -4,7 +4,7 @@
     class UserRoleController extends \App\Core\Controller {
         public function __pre() {
             if (!$_SESSION["loggedIn"]) {
-                header('Location: /user/login/');
+                header('Location: ' . \Configuration::BASE . '/user/login/');
             }
         }
     }
