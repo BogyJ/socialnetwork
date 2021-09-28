@@ -1,0 +1,17 @@
+{
+    "name": "jovanbog/htdocs",
+    "authors": [
+        {
+            "name": "Bogdan Jovanovic",
+            "email": "bogdan.jovanovic@ananas.rs"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": ""
+        }
+    }
+}
