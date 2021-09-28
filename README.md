@@ -1,9 +1,9 @@
 # Social Network Web Application
-* Link to web app: https://pentestingdomain.xyz
+* Link to web app: https://pentestingdomain.xyz (not live yet)
 
 ## Prerequisites
 * php 5.6+
-* composer
+* composer 2.0.9
 * In order to deploy locally run `composer install` to install the dependencies used for this project
 * After installation run `composer update` to update dependencies
 
@@ -14,3 +14,9 @@
 * `DATABASE_USER` --> database username, default `root`
 * `DATABASE_PASSWORD` --> database password for provided user
 * `DATABASE_NAME` --> database schema name
+
+## To do
+- [x] Initial setup - clone from template and setup env locally
+- [ ] Implement login and register functionality
+- [ ] Implement friend request functionality
+- [ ] Implement post functionality, including liking and commenting on the post (only users who are friends will be able to comment)
