@@ -35,7 +35,7 @@
         $$name = $value;
     }
 
-    $loader = new \Twig\Loader\FilesystemLoader('./views');
+    $loader = new \Twig\Loader\FilesystemLoader('./Views');
     $twig = new \Twig\Environment($loader, [
         'cache' => './twig-cache',
         'auto_reload' => true // set false to enable caching
