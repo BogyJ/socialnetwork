@@ -2,7 +2,8 @@
 
 {% block main %}
 <div class="container">
-    <a href="{{ BASE }}/user/logout/" class="link-primary">Logout</a>
+    <a href="{{ BASE }}/user/logout/" class="text-primary">Logout</a><br>
+    <a href="{{ BASE }}/user/profile/" class="text-primary">Profile</a>
 
     <h2 class="display-5 text-center mt-5">Notifications</h2>
 
@@ -10,8 +11,7 @@
     {% for user in users %}
         <li>
             {{ user.forename|e }} {{ user.surname|e }} Wants to be your friend
-            <a href="{{ BASE }}/user/accept/{{ user.user_id }}/" class="link-success">Accept</a>
-            <!--<a href="{{ BASE }}/user/reject/{{ user.user_id }}/" class="link-danger">Reject</a>-->
+            <a href="{{ BASE }}/user/accept/{{ user.user_id }}/" class="text-success">Accept</a>
         </li>
     {% endfor %}
     </ul>
