@@ -4,8 +4,14 @@
 ## Prerequisites
 * php 5.6+
 * composer 2.0.9
-* In order to deploy locally run `composer install` to install the dependencies used for this project
-* After installation run `composer update` to update dependencies
+* Install the composer dependencies used for this project
+```
+composer install
+```
+* After installation you need to update dependencies
+```
+composer update
+```
 
 ## How to deploy
 * You only need to change parameters in `Configuration.php` file
