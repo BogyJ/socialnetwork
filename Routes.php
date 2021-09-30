@@ -6,7 +6,14 @@
         \App\Core\Route::get('|^user/login/?$|', 'Main', 'getLogin'),
         \App\Core\Route::post('|^user/login/?$|', 'Main', 'postLogin'),
         \App\Core\Route::get('|^user/logout/?$|', 'Main', 'getLogout'),
+
         \App\Core\Route::get('|^user/profile/?$|', 'UserProfile', 'index'),
+
+        \App\Core\Route::get('|^user/friend/([0-9]+)/?$|', 'UserProfile', 'getSendRequest'),
+
+        \App\Core\Route::get('|^user/notification/?$|', 'UserProfile', 'getNotification'),
+
+        \App\Core\Route::get('|^user/accept/([0-9]+)/?$|', 'UserProfile', 'getAcceptFriendRequest'),
 
         /*\App\Core\Route::get('|^user/survey/show/?$|', 'Form', 'getForm'),
         \App\Core\Route::get('|^user/survey/show/all/?$|', 'Form', 'showForms'),

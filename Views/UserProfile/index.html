@@ -1,17 +1,19 @@
 {% extends "_global/index.html" %}
 
 {% block main %}
-<div class="container text-center">
-    <h1 class="display-4">Welcome, {{ user.forename|e }}</h1>
+<div class="container">
+    <h1 class="display-4 text-center">Welcome, {{ user.forename|e }}</h1>
     <a href="{{ BASE }}/user/logout/" class="link-primary">Logout</a>
 
+    <h2 class="display-5 text-center mt-5">Users you might know</h2>
+    <a href="{{BASE}}/user/notification/" class="btn btn-outline-primary">Notifications</a>
     {% for user in users %}
-        <div>
-            <h3 class="display-6 mt-4 mb-5">
-                {{ user.forename|e }} {{ user.surname|e }}
-                <a href="{{ BASE }}/friend/{{ user.user_id }}">Add friend</a>
-            </h3>
-        </div>
+        <ul class="mx-auto" style="width: 400px;">
+            <li>
+                {{ user.forename|e }} {{ user.surname|e }} <br>
+                <a href="{{ BASE }}/user/friend/{{ user.user_id }}/">Add friend</a>
+            </li>
+        </ul>
     {% endfor %}
 </div>
 {% endblock %}

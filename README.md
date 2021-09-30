@@ -18,6 +18,6 @@
 ## To do
 - [x] Initial setup - clone from template and setup env locally
 - [x] Implement login and register functionality
-- [ ] Implement friend request functionality
+- [x] Implement friend request functionality
 - [ ] Implement post functionality, including liking and commenting on the post (only users who are friends will be able to comment)
 - [ ] Deploy to a live web server :tada:

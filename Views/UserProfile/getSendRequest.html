@@ -1,0 +1,10 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container">
+    <h1 class="display-4 text-center">Welcome, {{ user.forename|e }}</h1>
+    <a href="{{ BASE }}/user/logout/" class="link-primary">Logout</a>
+
+    <h2 class="display-5 text-center mt-5">{{ message }}</h2>
+</div>
+{% endblock %}

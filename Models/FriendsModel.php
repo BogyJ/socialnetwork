@@ -14,11 +14,23 @@
             $result = $prep->execute([ $userId ]);
             $rels = [];
 
-            if (!$result) {
+            if ($result) {
                 $rels = $prep->fetchAll(\PDO::FETCH_OBJ);
             }
 
             return $rels;
+        }
+
+        public function insertNewFriendship($userId, $friendId) {
+            $sql = 'INSERT INTO `social_network`.`friends` (`user_id`,`friend_id`) VALUES (?,?);';
+            $prep = $this->dbc->getConnection()->prepare($sql);
+            $result = $prep->execute([ $userId, $friendId ]);
+
+            if (!$result) {
+                return false;
+            }
+
+            return $this->dbc->getConnection()->lastInsertId();
         }
 
     }
