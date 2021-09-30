@@ -11,6 +11,7 @@ composer install
 * After installation you need to update dependencies
 ```
 composer update
+composer dump auto-load
 ```
 
 ## How to deploy
