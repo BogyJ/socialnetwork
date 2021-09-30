@@ -15,7 +15,7 @@ composer dump auto-load
 ```
 
 ## How to deploy
-* You only need to change parameters in `Configuration.php` file and .htaccess file to match your directory path in which the project is located
+* You only need to change parameters in `Configuration.php` file and `.htaccess` file to match your directory path in which the project is located
 * `BASE` --> change it to base url (where is your project located), for example: `http://localhost` is in root of `htdocs` folder __DO NOT ENTER SLASH (/) AT THE END OF URL__ ~~(`http://localhost/`)~~
 * `DATABASE_HOST` --> database hostname, default `localhost`
 * `DATABASE_USER` --> database username, default `root`
