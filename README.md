@@ -1,5 +1,5 @@
 # Social Network Web Application
-* Link to web app: https://pentestingdomain.xyz (not live yet)
+* Social web app [link](https://pentestingdomain.xyz)
 
 ## Prerequisites
 * php 5.6+
@@ -28,4 +28,4 @@ composer dump auto-load
 - [x] Implement login and register functionality
 - [x] Implement friend request functionality
 - [ ] Implement post functionality, including liking and commenting on the post (only users who are friends will be able to comment)
-- [ ] Deploy to a live web server :tada:
+- [x] Deploy to a live web server :tada:
