@@ -20,7 +20,7 @@ composer update
 * `DATABASE_USER` --> database username, default `root`
 * `DATABASE_PASSWORD` --> database password for provided user
 * `DATABASE_NAME` --> database schema name
-* Link to `.sql` (database file)[https://drive.google.com/file/d/1QanG7XHw62o27_XnJ0BcQlPKbqEABT0C/view?usp=sharing]
+* Link to `.sql` [database file](https://drive.google.com/file/d/1QanG7XHw62o27_XnJ0BcQlPKbqEABT0C/view?usp=sharing)
 
 ## To do
 - [x] Initial setup - clone from template and setup env locally
